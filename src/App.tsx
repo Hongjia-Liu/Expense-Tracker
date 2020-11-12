@@ -5,7 +5,11 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Layout from 'components/Layout';
+import Statistics from './views/Statistics';
+import Tags from './views/Tags';
+import Track from './views/Track';
+import NoMatch from './views/NoMatch';
+
 
 
 function App() {
@@ -29,36 +33,6 @@ function App() {
       </Switch>
 
     </Router>
-  );
-}
-
-function NoMatch() {
-  return (
-    <div>404</div>
-  );
-}
-
-function Tags() {
-  return (
-    <Layout>
-      <h2>Tags</h2>
-    </Layout>
-  );
-}
-
-function Track() {
-  return (
-    <Layout>
-      <h2>Track</h2>
-    </Layout>
-  );
-}
-
-function Statistics() {
-  return (
-    <Layout>
-      <h2>Statistics</h2>
-    </Layout>
   );
 }
 
