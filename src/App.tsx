@@ -1,31 +1,41 @@
 import React from 'react';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
   Redirect
 } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+const Main = styled.div`
+  flex-grow: 1;
+  overflow: auto;
+`;
+const Nav = styled.nav`
+  border: 1px solid blue;
+  > ul {
+    display: flex;
+    > li {
+      width: 33.333%;
+      text-align: center;
+      padding: 16px;
+    }
+  }
+`;
+
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/tags">Tags</Link>
-            </li>
-            <li>
-              <Link to="/track">Track</Link>
-            </li>
-            <li>
-              <Link to="/statistics">Statistics</Link>
-            </li>
-          </ul>
-        </nav>
-
+      <Wrapper>
+        <Main>
         <Switch>
           <Route path="/tags">
             <Tags/>
@@ -41,7 +51,21 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-      </div>
+        </Main>
+        <Nav>
+          <ul>
+            <li>
+              <Link to="/tags">Tags</Link>
+            </li>
+            <li>
+              <Link to="/track">Track</Link>
+            </li>
+            <li>
+              <Link to="/statistics">Statistics</Link>
+            </li>
+          </ul>
+        </Nav>
+      </Wrapper>
     </Router>
   );
 }
