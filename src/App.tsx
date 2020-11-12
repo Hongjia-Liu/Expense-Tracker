@@ -5,44 +5,29 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import styled from 'styled-components';
-import Nav from './components/nav';
-
-const Wrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-`;
-const Main = styled.div`
-  flex-grow: 1;
-  overflow: auto;
-`;
-
+import Layout from 'components/Layout';
 
 
 function App() {
   return (
     <Router>
-      <Wrapper>
-        <Main>
-        <Switch>
-          <Route path="/tags">
-            <Tags/>
-          </Route>
-          <Route path="/track">
-            <Track/>
-          </Route>
-          <Route path="/statistics">
-            <Statistics/>
-          </Route>
-          <Redirect exact from="/" to="/track" />
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-        </Main>
-        <Nav />
-      </Wrapper>
+
+      <Switch>
+        <Route path="/tags">
+          <Tags/>
+        </Route>
+        <Route path="/track">
+          <Track/>
+        </Route>
+        <Route path="/statistics">
+          <Statistics/>
+        </Route>
+        <Redirect exact from="/" to="/track"/>
+        <Route path="*">
+          <NoMatch/>
+        </Route>
+      </Switch>
+
     </Router>
   );
 }
@@ -50,19 +35,31 @@ function App() {
 function NoMatch() {
   return (
     <div>404</div>
-  )
+  );
 }
 
 function Tags() {
-  return <h2>Tags</h2>;
+  return (
+    <Layout>
+      <h2>Tags</h2>
+    </Layout>
+  );
 }
 
 function Track() {
-  return <h2>Track</h2>;
+  return (
+    <Layout>
+      <h2>Track</h2>
+    </Layout>
+  );
 }
 
 function Statistics() {
-  return <h2>Statistics</h2>;
+  return (
+    <Layout>
+      <h2>Statistics</h2>
+    </Layout>
+  );
 }
 
 export default App;
