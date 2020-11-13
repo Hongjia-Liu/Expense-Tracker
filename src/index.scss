@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: grey;
 }
 *::before {
   box-sizing: border-box;
@@ -23,7 +22,13 @@ body {
   font-family: $font-black;
   font-size: 16px;
   line-height: 1.2;
+  background: #f5f5f5;
 }
+
+button{
+  font-family: inherit;
+}
+
 .icon {
   width: 1em;
   height: 1em;

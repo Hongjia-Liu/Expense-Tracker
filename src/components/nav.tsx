@@ -13,6 +13,7 @@ const NavWrapper = styled.nav`
       width: 33.333%;
       text-align: center;
       > a {
+        color: grey;
         display: flex;
         flex-direction: column;
         padding: 4px 0;
