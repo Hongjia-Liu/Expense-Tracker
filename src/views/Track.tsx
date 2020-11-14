@@ -28,6 +28,21 @@ const TagsSection = styled.section`
 `;
 
 const NotesSection = styled.section`
+  background: #f5f5f5;
+  padding: 0 16px;
+  font-size: 14px;
+  > label {
+    display: flex;
+    align-items: center;
+    > span { margin-right: 16px; white-space: nowrap}
+    > input {
+      display: block;
+      width: 100%;
+      height: 72px;
+      background: none;
+      border: none;
+    }
+  }
   
 `;
 const CategorySection = styled.section`
@@ -52,8 +67,8 @@ function Track() {
       <NotesSection>
         <label>
           <span>Note</span>
+          <input type="text" placeholder="Please enter your notes here"/>
         </label>
-        <input type="text"/>
       </NotesSection>
       <CategorySection>
         <ul>
