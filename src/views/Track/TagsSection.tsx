@@ -37,12 +37,14 @@ const TagsSectionWrapper = styled.section`
 const TagsSection: React.FC = () => {
   const [tags, setTags] = useState<string[]>(['clothes', 'food', 'accommodation', 'transportation']);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
   const onAddTag = () => {
     const newTagName = String(window.prompt('Please enter a new tag'));
     if (newTagName !== null) {
       setTags([...tags, newTagName]);
     }
   };
+
   const onToggleTag = (tag: string) => {
     if (selectedTags.includes(tag)) {
       // If tag is already selected, then copy all other tags which are not selected as new selectedTag

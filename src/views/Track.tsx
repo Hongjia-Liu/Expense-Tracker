@@ -14,12 +14,7 @@ function Track() {
   return (
     <MyLayout>
       <TagsSection />
-      <NotesSection>
-        <label>
-          <span>Note</span>
-          <input type="text" placeholder="Please enter your notes here"/>
-        </label>
-      </NotesSection>
+      <NotesSection />
       <CategorySection>
         <ul>
           <li className="selected">Expense</li>
