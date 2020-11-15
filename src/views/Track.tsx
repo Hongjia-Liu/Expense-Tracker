@@ -13,15 +13,7 @@ const MyLayout = styled(Layout)`
 function Track() {
   return (
     <MyLayout>
-      <TagsSection>
-        <ol>
-          <li>clothes</li>
-          <li>food</li>
-          <li>accommodation</li>
-          <li>transportation</li>
-        </ol>
-        <button>New Tag</button>
-      </TagsSection>
+      <TagsSection />
       <NotesSection>
         <label>
           <span>Note</span>
