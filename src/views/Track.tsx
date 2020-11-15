@@ -5,6 +5,11 @@ import styled from 'styled-components';
 const TagsSection = styled.section`
   background: #FFFFFF;
   padding: 12px 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
   > ol {
     margin: 0 -12px;
     > li {
@@ -26,7 +31,6 @@ const TagsSection = styled.section`
     margin-top: 8px;
   }
 `;
-
 const NotesSection = styled.section`
   background: #f5f5f5;
   padding: 0 16px;
@@ -125,9 +129,14 @@ const NumberPadSection = styled.section`
   }
 `;
 
+const MyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
+`;
+
 function Track() {
   return (
-    <Layout>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>clothes</li>
@@ -170,7 +179,7 @@ function Track() {
           <button>.</button>
         </div>
       </NumberPadSection>
-    </Layout>
+    </MyLayout>
   );
 }
 
