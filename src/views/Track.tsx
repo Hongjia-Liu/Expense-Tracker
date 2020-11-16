@@ -15,12 +15,7 @@ function Track() {
     <MyLayout>
       <TagsSection />
       <NotesSection />
-      <CategorySection>
-        <ul>
-          <li className="selected">Expense</li>
-          <li>Income</li>
-        </ul>
-      </CategorySection>
+      <CategorySection />
       <NumberPadSection>
         <div className="output">
           100
