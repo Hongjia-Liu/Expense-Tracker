@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, {useRef, useState} from 'react';
 
-const NotesSectionWrapper = styled.section`
+const NotesWrapper = styled.section`
   background: #f5f5f5;
   padding: 0 16px;
   font-size: 14px;
@@ -19,7 +19,7 @@ const NotesSectionWrapper = styled.section`
   }
 `;
 
-const NotesSection: React.FC = () => {
+const Notes: React.FC = () => {
   const [notes, setNotes] = useState('');
   const refInput = useRef<HTMLInputElement>(null);
   const onBlur = () => {
@@ -29,7 +29,7 @@ const NotesSection: React.FC = () => {
   }
 
   return (
-    <NotesSectionWrapper>
+    <NotesWrapper>
       <label>
         <span>Note</span>
         <input type="text" placeholder="Please enter your notes here"
@@ -38,9 +38,9 @@ const NotesSection: React.FC = () => {
                onBlur={onBlur}
         />
       </label>
-    </NotesSectionWrapper>
+    </NotesWrapper>
   )
 
 }
 
-export {NotesSection}
+export {Notes}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, {useState} from 'react';
 
-const TagsSectionWrapper = styled.section`
+const TagsWrapper = styled.section`
   background: #FFFFFF;
   padding: 12px 16px;
   flex-grow: 1;
@@ -34,7 +34,7 @@ const TagsSectionWrapper = styled.section`
   }
 `;
 
-const TagsSection: React.FC = () => {
+const Tags: React.FC = () => {
   const [tags, setTags] = useState<string[]>(['clothes', 'food', 'accommodation', 'transportation']);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
@@ -59,7 +59,7 @@ const TagsSection: React.FC = () => {
   }
 
   return (
-    <TagsSectionWrapper>
+    <TagsWrapper>
       <ol>
         {tags.map(tag =>
           <li
@@ -70,9 +70,9 @@ const TagsSection: React.FC = () => {
         )}
       </ol>
       <button onClick={onAddTag}>New Tag</button>
-    </TagsSectionWrapper>
+    </TagsWrapper>
   );
 };
 
 
-export {TagsSection};
+export {Tags};
