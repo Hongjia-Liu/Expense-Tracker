@@ -34,10 +34,14 @@ const TagsWrapper = styled.section`
   }
 `;
 
-const Tags: React.FC = () => {
-  const [tags, setTags] = useState<string[]>(['clothes', 'food', 'accommodation', 'transportation']);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+type Props = {
+  value: string[];
+  onChange: (selected: string[]) => void;
+}
 
+const Tags: React.FC<Props> = (props) => {
+  const [tags, setTags] = useState<string[]>(['clothes', 'food', 'accommodation', 'transportation']);
+  const selectedTags = props.value;
   const onAddTag = () => {
     const newTagName = String(window.prompt('Please enter a new tag'));
     if (newTagName !== null) {
@@ -48,15 +52,15 @@ const Tags: React.FC = () => {
   const onToggleTag = (tag: string) => {
     if (selectedTags.includes(tag)) {
       // If tag is already selected, then copy all other tags which are not selected as new selectedTag
-      setSelectedTags(selectedTags.filter(t => t !== tag));
+      props.onChange(selectedTags.filter(t => t !== tag));
     } else {
-      setSelectedTags([...selectedTags, tag]);
+      props.onChange([...selectedTags, tag]);
     }
   };
 
   const isSelected = (tag: string) => {
     return selectedTags.includes(tag) ? 'selected' : '';
-  }
+  };
 
   return (
     <TagsWrapper>
@@ -64,7 +68,9 @@ const Tags: React.FC = () => {
         {tags.map(tag =>
           <li
             key={tag}
-            onClick={ ()=>{onToggleTag(tag);} }
+            onClick={() => {
+              onToggleTag(tag);
+            }}
             className={isSelected(tag)}
           >{tag}</li>
         )}
